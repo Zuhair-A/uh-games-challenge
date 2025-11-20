@@ -1,0 +1,277 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+/* Full-page background image */
+
+ /* Bootstrap5 Navbar styling */
+     .uh-logo {
+      width: 360px;
+      height: auto;
+    }
+   .logo-wrapper {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1050;
+      text-align: center;
+    }
+    .navbar {
+      background-color: rgba(255,255,255, 0.6);
+      box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.25);
+      width: 84% !important;
+      border-radius: 10px;
+      padding: 1rem 0;
+      z-index: 1040;  
+    }
+      .navbar.fixed-top {
+        position: fixed;           
+        top: 2rem;                  
+        left: 50% !important;        
+        right: auto !important;       
+        transform: translateX(-50%);
+        width: min(90vw, 1300px);     
+        margin: 0;                    
+        border-radius: 10px;
+      }
+    
+    .navbar-nav{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px; 
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+ 
+.navbar-nav .nav-link {
+      color: #C8102E !important;
+      font-weight: 500;
+      padding: .6rem 2rem;
+      border-radius: 8px;
+	  	min-width: 6rem;  
+      width: auto; 
+		  display: inline-block;
+      transition: all 0.25s ease;
+      font-size: 1.1rem;
+     
+    }
+   .navbar.navbar-transparent {
+      background:  rgba(255,255,255, 0.8);
+      box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.25);
+      margin-top: 3.5rem; 
+    }
+  
+   .navbar.navbar-transparent .nav-link,
+    .navbar.navbar-transparent .navbar-brand {
+      font-weight: 700;
+      color: #C8102E !important;
+    }
+    .navbar.navbar-white {
+      background: #fff;
+      box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.25);
+      font-weight: 900 !important;
+      width: 100% !important ;
+       color: #C8102E !important;
+       top: 0; 
+    }
+
+    .navbar.navbar-white .navbar-brand,
+.navbar.navbar-white .nav-link {
+      font-weight: 700 !important;  
+      color: #C8102E !important;    
+
+}
+    .navbar.navbar-transparent .nav-link:hover {
+      background-color: #C8102E;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+
+     .navbar-nav .nav-link:hover {
+      background-color: #C8102E;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    .btn-register {
+      background-color: #C8102E !important;
+      color: #fff !important;
+      font-weight: 600;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-register:hover {
+      background-color: #a50d24 !important;
+      color: #fff !important;
+    }
+    
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(200, 16, 46, 0.6), rgba(0, 0, 0, 0.6)),  
+       url('../images/uh-games-splash.jpg');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+
+
+    
+@media (max-width: 580px){
+ .navbar{
+  width: 92% !important;
+ }
+.navbar-nav {
+    display: block;     
+    gap: 0;             
+    text-align: left; 
+    padding: 1rem;      
+  }
+  .navbar-nav .nav-link {
+    display: block;     
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+  .banner-title span{
+    margin-top: 2rem;
+    font-size: 12vw !important; 
+  }
+   .sub-title{
+    font-size: 1.2rem !important;
+   }
+}
+
+@media (max-width: 1368px){
+ .banner-title span {
+    margin-top: 3rem !important;
+  }
+  .navbar-nav{
+    gap: 5px !important;
+  }
+   .navbar {
+    width: 90% !important;
+  }
+  .about, .tracks {
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 1.5rem !important;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    
+}
+
+.about .about-img img{
+  width: 100% !important;
+  height: 80% !important
+}
+  
+}
+
+/* End of Bootstrap5 Navbar styling */
+
+/* ------ BannerHeading Typewriter effect -------- */
+    
+    /* Container for typewriter text */
+    .banner-title {
+      font-family: "League Gothic", sans-serif;
+      font-size: clamp(5rem, 8vw, 8rem);
+       line-height: 1.05;   
+      color: #f1f5f9;
+      margin: 5 rem 2rem auto;
+      text-transform: uppercase;
+       text-align: center;
+    }
+
+    /* run typing once, keep final state; caret blinks forever */
+    .typewriter-once span {
+        --chars: 22;               /* # of characters in the text */
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 0.08em solid currentColor;
+        animation:
+        typing 3s steps(var(--chars), end) forwards, /* stop at full text */
+        blink 0.8s step-end infinite;                 /* keep cursor blinking */
+    }
+
+    .typewriter-once span::before {
+      content: attr(data-text);
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to   { width: calc(var(--chars) * 1ch) }
+    }
+
+    @keyframes blink { 50% { border-color: transparent } }
+
+    /* --- Subtitle (h2) --- */
+    .sub-title {
+        color: white;     
+        font:  1.8rem "Source Sans Pro", sans-serif;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 55ch;     /* keeps lines comfortable on wide screens */
+        text-wrap: wrap;  /* nicer line breaks when supported */
+        opacity: 0;
+        transform: translateY(80px);
+        animation: fadeIn 12s ease forwards;
+        animation-delay: calc(var(--dur) + 1s);  /* appears after typing */
+    }
+    @keyframes fadeIn {
+         from { opacity: 0; transform: translateY(100px); }
+         to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Respect motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .typewriter-once span { animation: none; border-right: 0; }
+      .sub-title { animation: none; opacity: 1; transform: none; }
+    }
+/* Edning of custom styling */
+
+/* Main content styling */
+.about, .tracks {
+    max-width: 100%;
+    margin: 2rem 2rem;
+    padding: 2rem 1rem 2rem 11rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+  
+}
+.tracks {
+  background-color: rgba( 136, 139, 141, 0.4);
+}
+.about h1, .tracks h1 {
+  font: 5rem/1 "League Gothic", sans-serif;
+}
+.about h1 .partial-underline, .tracks h1 .partial-underline {
+  border-bottom: 5px solid #C8102E;
+ display: inline-block;
+}
+.about-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Footer Styling */
+.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: #666;
+}
