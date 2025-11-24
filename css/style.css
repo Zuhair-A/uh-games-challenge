@@ -160,7 +160,7 @@ html, body {
    .navbar {
     width: 90% !important;
   }
-  .about, .tracks {
+  .tracks {
     max-width: 100%;
     margin: 2rem auto;
     padding: 1.5rem !important;
@@ -170,11 +170,7 @@ html, body {
     
 }
 
-.about .about-img img{
-  width: 100% !important;
-  height: 80% !important
-}
-  
+
 }
 
 /* End of Bootstrap5 Navbar styling */
@@ -241,7 +237,7 @@ html, body {
 /* Edning of custom styling */
 
 /* Main content styling */
-.about, .tracks {
+.tracks {
     max-width: 100%;
     margin: 2rem 2rem;
     padding: 2rem 1rem 2rem 11rem;
@@ -250,22 +246,59 @@ html, body {
     color: #333;
   
 }
-.tracks {
-  background-color: rgba( 136, 139, 141, 0.4);
+.about-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 350px;
+  background-color: #C8102E;
+  color: #fff;
+  margin-top: 30px;
 }
-.about h1, .tracks h1 {
-  font: 5rem/1 "League Gothic", sans-serif;
+.about-split .text-side {
+  flex: 1 1 45%;
+  background-color: transparent; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem 3rem;
 }
-.about h1 .partial-underline, .tracks h1 .partial-underline {
-  border-bottom: 5px solid #C8102E;
- display: inline-block;
+.about-split .text-side h1 .partial-underline {
+  border-bottom: 5px solid #ffffff !important;
+ display: inline-block !important;
 }
-.about-img img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+.about-split .text-side h1 {
+font: 5rem / 1 "League Gothic", sans-serif;
+
+  margin-bottom: 1rem;
 }
+.about-split .text-side p {
+  max-width: 620px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.about-split .image-side {
+  flex: 1 1 55%;
+  background: #C8102E url("/images/app-contest-2.jpg")
+              center/cover no-repeat;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 1000px) {
+  .about-split {
+    flex-direction: column;
+    
+  }
+  .text-side div{
+   margin: 0 auto !important;
+  }
+  .about-split .image-side {
+    clip-path: none;
+    height: 250px;
+    display: none;
+  }
+}
+
+
 /* Footer Styling */
 .footer {
     background-color: #f8f9fa;
