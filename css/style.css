@@ -262,7 +262,14 @@ html, body {
   align-items: center;
   justify-content: flex-end;
   padding: 4rem 3rem;
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.9s ease-out;
 }
+.text-side.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
 .about-split .text-side h1 .partial-underline {
   border-bottom: 5px solid #ffffff !important;
  display: inline-block !important;
@@ -282,6 +289,11 @@ font: 5rem / 1 "League Gothic", sans-serif;
   background: #C8102E url("../images/app-contest-2.jpg")
               center/cover no-repeat;
   clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+  transition: transform 0.3s 
+ease-in-out, box-shadow 0.3s 
+ease-in-out;
+        transform: scale(1.02);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px;
 }
 @media (max-width: 1000px) {
   .about-split {

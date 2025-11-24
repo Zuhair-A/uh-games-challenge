@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.classList.remove('navbar-white');
     }
   };
+  const items = document.querySelectorAll('.text-side');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.3 
+    });
+
+    items.forEach(el => io.observe(el));
 
   // set once on load, then on scroll
   setNavStyle();
